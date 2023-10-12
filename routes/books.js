@@ -6,10 +6,10 @@ const Book = require("../models/Books");
 
 router.post("/new", (req, res, next) => {
   const book = new Book({
-    title: "Kimyo",
+    title: "English cartoon",
     like: true,
     comments: [
-      { message: "Juda yaxshi kitob" },
+      { message: "Juda yaxshi!" },
       { message: "Menga juda yoqdi bu kitob" },
     ],
     meta: {
@@ -24,7 +24,7 @@ router.post("/new", (req, res, next) => {
       res.json({ message: "Created! successfully", data });
     })
     .catch((err) => {
-      res.json({ message: "ERROR!" });
+      res.json({ message: err });
     });
 });
 
