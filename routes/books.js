@@ -7,6 +7,15 @@ const Book = require("../models/Books");
 router.post("/new", (req, res, next) => {
   const book = new Book({
     title: "Kimyo",
+    like: true,
+    comments: [
+      { message: "Juda yaxshi kitob" },
+      { message: "Menga juda yoqdi bu kitob" },
+    ],
+    meta: {
+      votes: 140,
+      favs: 400,
+    },
   });
 
   book
